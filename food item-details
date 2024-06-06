@@ -1,0 +1,1046 @@
+const categories = [
+  { category: 'All', },
+  { category: 'Snacks', },
+  { category: 'Burgers', },
+  { category: 'Combos', },
+  { category: 'Shakes', },
+  { category: 'Mojito', },
+  { category: 'Ice Creams', },
+  { category: 'Falooda', },
+  { category: 'Maggi', },
+  { category: 'Drinks', },
+  { category: 'Special', }
+]
+
+
+//here is the menu item data verify //that... don't think about categories on //the top...If any doubts, queries and questions call me at any time..
+const menu_items=[
+  {
+    "name": "French Fries",
+    "description": "Crispy, golden french fries made from fresh-cut potatoes and fried to perfection. Served piping hot with your choice of dipping sauce - ketchup, ranch, honey mustard or cheese. ",
+    "quantity": 0,
+    "img": "example.com/image-french-fries.jpg",
+    "category": "Fries",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Cheese French Fries",
+    "description": "A delicious upgrade to classic cheese french fries! Crispy golden fries generously topped with a velvety cheese sauce made from a rich blend of melted cheddar and Parmesan.",
+    "quantity": 0,
+    "img": "example.com/image-cheese-french-fries.jpg",
+    "category": "Fries",
+    "price": 139,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Topped French Fries",
+    "description": "Elevate your french fry experience with our delectable topped fries! Crispy golden fries loaded with your choice of mouthwatering toppings.",
+    "quantity": 0,
+    "img": "example.com/image-topped-french-fries.jpg",
+    "category": "Fries",
+    "price": 145,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Peri Peri French Fries",
+    "description": "Crispy golden french fries tossed in a fiery peri peri sauce. These fries pack a punch of flavor from a blend of spicy chili peppers, garlic, herbs, and citrus. A zesty, smoky kick in every bite.",
+    "quantity": 0,
+    "img": "example.com/image-peri-peri-french-fries.jpg",
+    "category": "Fries",
+    "price": 145,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chicken Lollipop [5 Pieces]",
+    "description": "Juicy chicken drumettes coated in a crispy seasoned batter and served in a lollipop style for fun and easy eating.",
+    "quantity": 0,
+    "img": "example.com/image-chicken-lollipop.jpg",
+    "category": "Fries",
+    "price": 249,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Veg Steamed Momos [5 Pieces]",
+    "description": ""Savory vegetable dumplings steamed to perfection and served with a tangy dipping sauce.,
+    "quantity": 0,
+    "img": "example.com/image-veg-steamed-momos.jpg",
+    "category": "Momos",
+    "price": 145,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chicken Steamed Momos [5 Pieces]",
+    "description": "Juicy chicken filled dumplings steamed and served piping hot with a flavorful dip.",
+    "quantity": 0,
+    "img": "example.com/image-chicken-steamed-momos.jpg",
+    "category": "Momos",
+    "price": 174,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Bread Omelette",
+    "description": "A classic breakfast dish of eggs cooked flat and wrapped around fresh bread.",
+    "quantity": 0,
+    "img": "example.com/image-bread-omelette.jpg",
+    "category": "Non Veg Snacks",
+    "price": 73,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Cheesy Stuffed Bread Omelette",
+    "description": "A delicious twist with gooey cheese stuffed inside the bread before being wrapped in a fluffy omelette.",
+    "quantity": 0,
+    "img": "example.com/image-cheesy-stuffed-bread-omelette.jpg",
+    "category": "Non Veg Snacks",
+    "price": 99,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Spicy Bread Omelette",
+    "description": "Bread omelette kicked up a notch with spicy seasonings baked right in",
+    "quantity": 0,
+    "img": "example.com/image-spicy-bread-omelette.jpg",
+    "category": "Non Veg Snacks",
+    "price": 99,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Veg Sandwich",
+    "description": "Fresh veggies like tomatoes, cucumbers, lettuce and more piled high between two slices of bread.",
+    "quantity": 0,
+    "img": "example.com/image-veg-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 89,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Capsicum Sandwich",
+    "description": "Roasted bell peppers provide a smoky sweet crunch in this veggie-packed sandwich.",
+    "quantity": 0,
+    "img": "example.com/image-capsicum-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 89,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chilli Sandwich",
+    "description": "Spice lovers will enjoy the kick from green chilies in this zesty grilled sandwich.",
+    "quantity": 0,
+    "img": "example.com/image-chilli-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 89,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chilli Cheese Sandwich",
+    "description": "The classic grilled cheese taken to new levels with the addition of diced green chilies.",
+    "quantity": 0,
+    "img": "example.com/image-chilli-cheese-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 89,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Capsicum Cheese Sandwich",
+    "description": " Roasted bell peppers and melty cheese make this veggie grilled cheese extraordinary.",
+    "quantity": 0,
+    "img": "example.com/image-capsicum-cheese-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 102,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chicken 69 Sandwich",
+    "description": "A unique sandwich with sliced chicken breast, special sauce, lettuce, tomatoes and more.",
+    "quantity": 0,
+    "img": "example.com/image-chicken-69-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 189,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Paneer Sandwich",
+    "description": "The popular Indian cheese paneer stars in this protein-packed vegetarian sandwich.",
+    "quantity": 0,
+    "img": "example.com/image-paneer-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 139,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "American Cheese Corn Sandwich",
+    "description": "Melted American cheese combines with sweet kernels of corn in this comforting sandwich.",
+    "quantity": 0,
+    "img": "example.com/image-american-cheese-corn-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 139,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chicken Sandwich",
+    "description": "Simple but satisfying sliced chicken breast on fresh bread with your choice of toppings.",
+    "quantity": 0,
+    "img": "example.com/image-chicken-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 189,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Chocolate Sandwich",
+    "description": "A sweet treat of chocolate spread or chocolate hazelnut spread between two slices of bread.",
+    "quantity": 0,
+    "img": "example.com/image-chocolate-sandwich.jpg",
+    "category": "Sandwiches",
+    "price": 119,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Premium Veg Burger",
+    "description": " A veggie patty made from a delicious blend of lentils, vegetables and savory spices, topped with fresh produce like lettuce, tomatoes and onions on a soft bun.",
+    "quantity": 0,
+    "img": "example.com/image-premium-veg-burger.jpg",
+    "category": "Burgers",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Paneer Burger",
+    "description": "Cc special mayo and mixed spices, veg burger patty, paneer cubes, added cheese.",
+    "quantity": 0,
+    "img": "example.com/image-paneer-burger.jpg",
+    "category": "Burgers",
+    "price": 199,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Premium Chicken Burger",
+    "description": " A juicy grilled or crispy fried chicken breast burger with fresh toppings like lettuce, tomato, cheese and signature sauces on a soft bun.",
+    "quantity": 0,
+    "img": "example.com/image-premium-chicken-burger.jpg",
+    "category": "Burgers",
+    "price": 199,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Chicken Tower Burger",
+    "description": "Cc special mayo and mixed spices, chicken burger patties [2 pieces], added cheese.",
+    "quantity": 0,
+    "img": "example.com/image-chicken-tower-burger.jpg",
+    "category": "Burgers",
+    "price": 261,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Chicken Zinger Tower Burger",
+    "description": " A spicy twist on the tower with crispy breaded chicken patties coated in a kicked-up red sauce.",
+    "quantity": 0,
+    "img": "example.com/image-chicken-zinger-tower-burger.jpg",
+    "category": "Burgers",
+    "price": 319,
+    "available_items": "50",
+    "type": "Non-Veg"
+  },
+  {
+    "name": "Mini Starter",
+    "description": "Bread Omelette, Veg Maggie, Peanutcandy shake",
+    "quantity": 0,
+    "img": "example.com/image-mini-starter.jpg",
+    "category": "Combos",
+    "price": 219,
+    "available_items": "50"
+  },
+  {
+    "name": "Cupids Special Combo",
+    "description": "Red Velvet Waffle x 1 Chicken sandwich x 1 Veg Maggie x 1 French Fries x",
+    "quantity": 0,
+    "img": "example.com/image-cupids-special-combo.jpg",
+    "category": "Combos",
+    "price": 499,
+    "available_items": "50"
+  },
+  {
+    "name": "Classy Snack",
+    "description": " An upscale snack box with sophisticated bites like stuffed mushrooms, bruschetta, mini grilled sandwiches and more.",
+    "quantity": 0,
+    "img": "example.com/image-classy-snack.jpg",
+    "category": "Combos",
+    "price": 549,
+    "available_items": "50"
+  },
+  {
+    "name": "Banana Milkshake",
+    "description": "Fresh Fruit Shake, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-banana-milkshake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Pineapple Milkshake",
+    "description": "Fresh Fruit Shake, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-pineapple-milkshake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Carrot Milkshake",
+    "description": "Fresh Fruit Shake, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-carrot-milkshake.jpg",
+    "category": "Shakes",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Muskmelon Milkshake",
+    "description": "Fresh Fruit Shake, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-muskmelon-milkshake.jpg",
+    "category": "Shakes",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Strawberry Banana Milkshake",
+    "description": "Fresh Fruit and ice cream Shake, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-strawberry-banana-milkshake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Date Shake",
+    "description": "Fresh dates shake, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-date-shake.jpg",
+    "category": "Shakes",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Pomogranate Milkshake",
+    "description": "Fresh Fruit and ice cream Shake, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-pomogranate-milkshake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Strawberry Milkshake [350 ml]",
+    "description": "Milkshake only made of Strawberry ice cream and milk, no added essence",
+    "quantity": 0,
+    "img": "example.com/image-strawberry-milkshake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Pista Milkshake [350 ml]",
+    "description": "Milkshake only made of pista ice cream and milk, no added essence",
+    "quantity": 0,
+    "img": "example.com/image-pista-milkshake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Mango Milkshake [350 ml]",
+    "description": "Milkshake only made of mango ice cream and milk, no added essence",
+    "quantity": 0,
+    "img": "example.com/image-mango-milkshake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chocolate Milkshake [350 ml]",
+    "description": "Milkshake only made of chocolate ice cream and milk, no added essence",
+    "quantity": 0,
+    "img": "example.com/image-chocolate-milkshake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Butterscotch Milkshake [350 ml]",
+    "description": "Milkshake only made of butterscotch ice cream and milk, no added essence",
+    "quantity": 0,
+    "img": "example.com/image-butterscotch-milkshake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Blackcurrant Milkshake [350 ml]",
+    "description": "Milkshake only made of Blackcurrant ice cream and milk, no added essence",
+    "quantity": 0,
+    "img": "example.com/image-blackcurrant-milkshake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Oreo Shake",
+    "description": "Fresh vanilla ice cream and oreo cookies, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-oreo-shake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Peanut Candy Shake",
+    "description": "Fresh vanilla ice cream and peanut candy, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-peanut-candy-shake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Hide And Seekh Shake",
+    "description": "Fresh vanilla ice cream and hide and seekh cookies, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-hide-and-seekh-shake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Bourbon Shake",
+    "description": "Fresh vanilla ice cream and bourbon cookies, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-bourbon-shake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Cold Boost Shake",
+    "description": "Fresh vanilla ice cream and boost and milk, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-cold-boost-shake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Cold Horlicks Shake",
+    "description": "Fresh vanilla ice cream and Horlicks and milk, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-cold-horlicks-shake.jpg",
+    "category": "Shakes",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Cold Coffee",
+    "description": "Fresh vanilla ice cream and Chopped coffee beans mixed with milk and blended",
+    "quantity": 0,
+    "img": "example.com/image-cold-coffee.jpg",
+    "category": "Shakes",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "KitKat Shake",
+    "description": "Fresh vanilla ice cream and Kitkats and milk, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-kitkat-shake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Dairy Milk Shake",
+    "description": "Fresh vanilla ice cream and dairymilk and milk, No added essence",
+    "quantity": 0,
+    "img": "example.com/image-dairymilk-shake.jpg",
+    "category": "Shakes",
+    "price": 169,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Virgin Mojito",
+    "description": " A refreshing non-alcoholic spin on the classic cocktail with fresh mint, lime juice, club soda and a touch of sweetness over crushed ice.",
+    "quantity": 0,
+    "img": "example.com/image-virgin-mojito.jpg",
+    "category": "Mojitos",
+    "price": 119,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Refreshment Drink [ 350 Ml ]",
+    "description": "A bright and thirst-quenching beverage like lemonade or fruit punch, perfect for beating the heat.",
+    "quantity": 0,
+    "img": "example.com/image-refreshment-drink.jpg",
+    "category": "Mojitos",
+    "price": 119,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Black Magic [350 Ml]",
+    "description": "A dark, mysterious looking mocktail that's sweet, tangy and boldly flavored with activated charcoal.",
+    "quantity": 0,
+    "img": "example.com/image-black-magic-mojito.jpg",
+    "category": "Mojitos",
+    "price": 149,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Strawberry Mojito [350 Ml]",
+    "description": "The beloved mojito gets a fresh berry twist by muddling ripe strawberries into the lime and mint mixture.",
+    "quantity": 0,
+    "img": "example.com/image-strawberry-mojito.jpg",
+    "category": "Mojitos",
+    "price": 149,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Pineapple Mojito [350 Ml]",
+    "description": "Tropical pineapple juice adds bright, sunny flavors to this fun fruity mojito variation.",
+    "quantity": 0,
+    "img": "example.com/image-pineapple-mojito.jpg",
+    "category": "Mojitos",
+    "price": 149,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Watermelon Mojito [350 Ml]",
+    "description": "Chunks of fresh watermelon get muddled with mint and lime for a hydrating, pink-hued summer sipper.",
+    "quantity": 0,
+    "img": "example.com/image-watermelon-mojito.jpg",
+    "category": "Mojitos",
+    "price": 149,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Blue Land [350 Ml]",
+    "description": "A vibrant blue colored drink with layers of pineapple and citrus flavors.",
+    "quantity": 0,
+    "img": "example.com/image-blue-land-mojito.jpg",
+    "category": "Mojitos",
+    "price": 169,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Blue Lagon [350 Ml]",
+    "description": "Bright blue curacao gives this tropical drink its signature ocean-inspired look and orange flavor.",
+    "quantity": 0,
+    "img": "example.com/image-blue-lagon-mojito.jpg",
+    "category": "Mojitos",
+    "price": 169,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Blue Curacao Lemon Land [350 Ml]",
+    "description": "Tart lemon combines with the vivid blue citrus liqueur for a refreshing sweet-and-sour cooler.",
+    "quantity": 0,
+    "img": "example.com/image-blue-curacao-lemon-land-mojito.jpg",
+    "category": "Mojitos",
+    "price": 169,
+    "available_items": "50",
+    "type": "Non-Alcoholic"
+  },
+  {
+    "name": "Strawberry Ice Cream [3 Scoops, Large]",
+    "description": "Strawberry ice cream, choco topped and rainbow balls.",
+    "quantity": 0,
+    "img": "example.com/image-strawberry-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Pista Ice Cream [3 Scoops, Large]",
+    "description": "Pista ice cream, choco topped and rainbow balls.",
+    "quantity": 0,
+    "img": "example.com/image-pista-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 179,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Mango Ice Cream [3 Scoops, Large]",
+    "description": "Mango ice cream, choco topped and rainbow balls.",
+    "quantity": 0,
+    "img": "example.com/image-mango-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 179,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chocolate Ice Cream [3 Scoops, Large]",
+    "description": "Chocolate ice cream, choco topped and rainbow balls.",
+    "quantity": 0,
+    "img": "example.com/image-chocolate-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 189,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Butterscotch Ice Cream [3 Scoops, Large]",
+    "description": "Butterscotch ice cream, choco topped and rainbow balls.",
+    "quantity": 0,
+    "img": "example.com/image-butterscotch-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 189,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Blackcurrant Ice Cream [3 Scoops, Large]",
+    "description": "Blackcurrant ice cream, choco topped and rainbow balls.",
+    "quantity": 0,
+    "img": "example.com/image-blackcurrant-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 189,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Fruit Salad with Ice Cream",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-fruit-salad-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 179,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Brownie Ice Cream",
+    "description": "Vanilla ice cream placed above freshly baked our own dark brownie, cherry, rainbow balls, choco sauce",
+    "quantity": 0,
+    "img": "example.com/image-brownie-ice-cream.jpg",
+    "category": "Ice Creams",
+    "price": 189,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Belgium Waffles",
+    "description": "Nicely baked red velvet waffle added with customized dark or white chocolate compound and flavored ice creams to make your dessert delicious.",
+    "quantity": 0,
+    "img": "example.com/image-belgium-waffles.jpg",
+    "category": "Ice Creams",
+    "price": 199,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Love Birds",
+    "description": "Two intertwined fruit skewers served with a side of creamy dipping sauce for a playful dessert.",
+    "quantity": 0,
+    "img": "example.com/image-love-birds-falooda.jpg",
+    "category": "Falooda",
+    "price": 199,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Royal Falooda",
+    "description": "An ornate Indian dessert drink featuring layers of vermicelli noodles, rose syrup, nuts, ice cream and more.",
+    "quantity": 0,
+    "img": "example.com/image-royal-falooda.jpg",
+    "category": "Falooda",
+    "price": 199,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Arabian Falooda",
+    "description": "Middle Eastern flavors like rosewater, saffron and pistachios make this falooda extra exotic.",
+    "quantity": 0,
+    "img": "example.com/image-arabian-falooda.jpg",
+    "category": "Falooda",
+    "price": 220,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Honeymoon Delight",
+    "description": " A romantic dessert beverage with strawberry and chocolate flavors.",
+    "quantity": 0,
+    "img": "example.com/image-honeymoon-delight-falooda.jpg",
+    "category": "Falooda",
+    "price": 220,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Cc Special Falooda",
+    "description": "A customer favorite falooda creation with special toppings.",
+    "quantity": 0,
+    "img": "example.com/image-cc-special-falooda.jpg",
+    "category": "Falooda",
+    "price": 250,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Dry Maggi",
+    "description": "Dry maggi added with fresh veggies onion capsicum tomato and topped with coriander.",
+    "quantity": 0,
+    "img": "example.com/image-dry-maggi.jpg",
+    "category": "Maggi",
+    "price": 59,
+    "available_items": "50",
+    "type": "Veg",
+    "special": "CHEF'S SPECIAL"
+  },
+  {
+    "name": "Lemon Salt [350 ml]",
+    "description": " Simple and refreshing lemon drinks with a saltiness to order.",
+    "quantity": 0,
+    "img": "example.com/image-lemon-salt.jpg",
+    "category": "Drinks",
+    "price": 49,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Lemon Sweet [350 ml]",
+    "description": " Simple and refreshing lemon drinks with a sweetness to order.",
+    "quantity": 0,
+    "img": "example.com/image-lemon-sweet.jpg",
+    "category": "Drinks",
+    "price": 58,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Lemon Soda Salt [350 ml]",
+    "description": "Lemon drinks made bubbly with the addition of soda water and a salty or sweet twist.",
+    "quantity": 0,
+    "img": "example.com/image-lemon-soda-salt.jpg",
+    "category": "Drinks",
+    "price": 69,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Lemon Soda Sweet [350 ml]",
+    "description": " Simple and refreshing lemon drinks with a sweetness to order.",
+    "quantity": 0,
+    "img": "example.com/image-lemon-soda-sweet.jpg",
+    "category": "Drinks",
+    "price": 69,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Lemon Mint [350 ml]",
+    "description": "Fresh mint adds a bright, herby accent to basic lemonade.",
+    "quantity": 0,
+    "img": "example.com/image-lemon-mint.jpg",
+    "category": "Drinks",
+    "price": 69,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Watermelon Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-watermelon-juice.jpg",
+    "category": "Drinks",
+    "price": 79,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Pineapple Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-pineapple-juice.jpg",
+    "category": "Drinks",
+    "price": 79,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Banana Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-banana-juice.jpg",
+    "category": "Drinks",
+    "price": 99,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Carrot Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-carrot-juice.jpg",
+    "category": "Drinks",
+    "price": 99,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Muskmelon Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-muskmelon-juice.jpg",
+    "category": "Drinks",
+    "price": 119,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Mosambi Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-mosambi-juice.jpg",
+    "category": "Drinks",
+    "price": 119,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Orange Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-orange-juice.jpg",
+    "category": "Drinks",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Pomegranate Fresh Juice [350 ml]",
+    "description": "",
+    "quantity": 0,
+    "img": "example.com/image-pomegranate-juice.jpg",
+    "category": "Drinks",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Lemon Pineapple Juice",
+    "description": "Tangy and tropical flavors combined into one vibrant juice.",
+    "quantity": 0,
+    "img": "example.com/image-lemon-pineapple-juice.jpg",
+    "category": "Drinks",
+    "price": 116,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Apple Juice",
+    "description": "A childhood classic, 100% apple juice is a sweet, nostalgic sipper.",
+    "quantity": 0,
+    "img": "example.com/image-apple-juice.jpg",
+    "category": "Drinks",
+    "price": 129,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Carrot Orange [350 ml]",
+    "description": "Carrot juice mixed with orange juice.",
+    "quantity": 0,
+    "img": "example.com/image-carrot-orange.jpg",
+    "category": "Drinks",
+    "price": 139,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Carrot Mosambi [350 ml]",
+    "description": "Carrot juice mixed with sweet mosambi juice.",
+    "quantity": 0,
+    "img": "example.com/image-carrot-mosambi.jpg",
+    "category": "Drinks",
+    "price": 139,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Abc Healthy Juice",
+    "description": "Carrot and beetroot juice.",
+    "quantity": 0,
+    "img": "example.com/image-abc-healthy-juice.jpg",
+    "category": "Drinks",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Cb Health Juice",
+    "description": "Carrot and beetroot juice.",
+    "quantity": 0,
+    "img": "example.com/image-cb-health-juice.jpg",
+    "category": "Drinks",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Cpa Health Juice",
+    "description": "Cucumber, pineapple, apple.",
+    "quantity": 0,
+    "img": "example.com/image-cpa-health-juice.jpg",
+    "category": "Drinks",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg",
+    "special": "CHEF'S SPECIAL, NEW"
+  },
+  {
+    "name": "Ac Health Juice",
+    "description": "Apple, cucumber.",
+    "quantity": 0,
+    "img": "example.com/image-ac-health-juice.jpg",
+    "category": "Drinks",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Pc Health Juice",
+    "description": "Pineapple, cucumber.",
+    "quantity": 0,
+    "img": "example.com/image-pc-health-juice.jpg",
+    "category": "Drinks",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Om Health Juice",
+    "description": "Melon and orange.",
+    "quantity": 0,
+    "img": "example.com/image-om-health-juice.jpg",
+    "category": "Drinks",
+    "price": 149,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Orange Mosambi [350 ml]",
+    "description": "Citrus blend featuring the sweet yet tart mosambi fruit.",
+    "quantity": 0,
+    "img": "example.com/image-orange-mosambi.jpg",
+    "category": "Drinks",
+    "price": 159,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Apple Pomegranate Mocktail [350 ml]",
+    "description": "Apple cider mixed with pomegranate juice makes a crisp, sweet-tart refresher.",
+    "quantity": 0,
+    "img": "example.com/image-apple-pomegranate-mocktail.jpg",
+    "category": "Drinks",
+    "price": 159,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Rose Milk [350 ml]",
+    "description": " Creamy milk flavored with rose water and hints of nuts or saffron.",
+    "quantity": 0,
+    "img": "example.com/image-rose-milk.jpg",
+    "category": "Drinks",
+    "price": 89,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Badam Milk [350 ml]",
+    "description": "An indulgent nutty milk drink flavored with almonds.",
+    "quantity": 0,
+    "img": "example.com/image-badam-milk.jpg",
+    "category": "Drinks",
+    "price": 89,
+    "available_items": "50",
+    "type": "Veg"
+  },
+  {
+    "name": "Chef Special Watermelon Agua Fresca",
+    "description": "Smashed watermelon added up with a specially flavoured milk topped with cashew cherries ...",
+    "quantity": 0,
+    "img": "example.com/image-chef-special-watermelon-agua-fresca.jpg",
+    "category": "specials",
+    "price": 199,
+    "available_items": "50",
+    "type": "Veg",
+    "special": "CHEF'S SPECIAL, NEW"
+  },
+  {
+    "name": "Cupid's Love Fall",
+    "description": " A romantic pink mocktail brimming with fruity flavors.",
+    "quantity": 0,
+    "img": "example.com/image-cupids-love-fall.jpg",
+    "category": "specials",
+    "price": 247,
+    "available_items": "50",
+    "type": "Veg"
